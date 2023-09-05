@@ -1,0 +1,25 @@
+{% extends "index.html" %}
+{% block content %}
+<div class="container">
+<h1>Ano: {{ campeonato.ano }}</h1>
+
+<div class="jumbotron">
+<h2>Campeão: {{campeonato.vencedor}}</h2>
+<p>
+    Vice: {{campeonato.vice}}
+</p>
+<p>
+    Terceiro lugar: {{campeonato.terceiro_colocado}}
+</p>
+<p>
+    Quarto lugar: {{campeonato.quarto_colocado}}
+</p>
+<p>
+    Artilheiro(s): {{campeonato.artilheiros}}
+</p>
+<p>
+    Gols: {{campeonato.gols}}
+</p>
+</div>
+</div>
+{% endblock %}
