@@ -1,27 +1,16 @@
-# from flask import abort, render_template
 from flask import abort, Blueprint, render_template, request, redirect, url_for
 
-from favoritesUrl.models import Futbrdata, URL
-# from . import db
+from favoritesUrl.models import  URL
 
 from favoritesUrl.ext.database import db
 
-# from .models import URL
 
 
 main = Blueprint('main', __name__)
 
 
 def index():
-    campeonatos = Futbrdata.query.all()
-    return render_template("index.html", campeonatos=campeonatos)
-
-
-def campeonato(ano):
-    campeonato = Futbrdata.query.filter_by(ano=ano).first() or abort(
-        404, "Campeonato nao encontrado"
-    )
-    return render_template("campeonato.html", campeonato=campeonato)
+    return render_template("index.html")
 
 @main.route('/')
 def home():

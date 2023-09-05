@@ -13,12 +13,12 @@ from favoritesUrl.models import Futbrdata, User, URL
 admin = Admin()
 
 
-class UserAdmin(sqla.ModelView):
-    column_list = ['username']
-    can_edit = False
+# class UserAdmin(sqla.ModelView):
+#     column_list = ['username']
+#     can_edit = False
 
-    def on_model_change(self, form, model, is_created):
-        model.password = generate_password_hash(model.password)
+#     def on_model_change(self, form, model, is_created):
+#         model.password = generate_password_hash(model.password)
 
 
 def init_app(app):
@@ -28,4 +28,4 @@ def init_app(app):
     admin.add_view(sqla.ModelView(Futbrdata, db.session))
     admin.add_view(sqla.ModelView(URL, db.session))
 
-    admin.add_view(UserAdmin(User, db.session))
+    # admin.add_view(UserAdmin(User, db.session))
